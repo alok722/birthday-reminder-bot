@@ -4,7 +4,7 @@
   "description": "This is a Bot which will remind me to wish Birthday to my friends.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "author": {
     "name": "Alok Raj",
