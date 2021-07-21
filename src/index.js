@@ -30,7 +30,7 @@ mongoose.connect(
 );
 
 // Run the job daily at 11 PM
-cron.schedule('2 * * * *', async () => {
+cron.schedule('*/2 * * * *', async () => {
     console.info("Node Server is up & running");
 });
 
