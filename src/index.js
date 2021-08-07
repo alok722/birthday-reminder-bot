@@ -14,6 +14,10 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use('/api', routes);
 
+app.use('/', (req, res) => {
+    res.status(200).send('<h2 align="center">Welcome to BirthDay Reminder Bot</h2>');
+});
+
 mongoose.connect(
     process.env.MONGODB_CONNECTION_URL,
     {
