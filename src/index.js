@@ -39,7 +39,7 @@ cron.schedule('*/2 * * * *', async () => {
 });
 
 // Run the job daily at 11 PM
-cron.schedule('1 9 * * *', async () => {
+cron.schedule('5 9 * * *', async () => {
     console.info("CronJob Triggered!");
     console.info('email', process.env.EMAIL);
     console.info('password', process.env.PASSWORD);
