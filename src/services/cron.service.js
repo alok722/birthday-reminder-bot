@@ -14,6 +14,7 @@ module.exports = {
                     await sendEmail(iterator.name);
                 }
             } else {
+                await sendEmail('Test User');
                 console.info("No birthday for today.", todayDate);
             }
         } catch (error) {

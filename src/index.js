@@ -33,16 +33,14 @@ mongoose.connect(
     }
 );
 
-// Run the job daily at 11 PM
+// Run the job every 2 minutes
 cron.schedule('*/2 * * * *', async () => {
     console.info("Node Server is up & running");
 });
 
-// Run the job daily at 11 PM
-cron.schedule('5 9 * * *', async () => {
+// Run the job daily at 9 PM
+cron.schedule('0 21 * * *', async () => {
     console.info("CronJob Triggered!");
-    console.info('email', process.env.EMAIL);
-    console.info('password', process.env.PASSWORD);
     await cronService();
 }, {
     scheduled: true,
