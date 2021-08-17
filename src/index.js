@@ -39,9 +39,12 @@ cron.schedule('*/2 * * * *', async () => {
 });
 
 // Run the job daily at 11 PM
-cron.schedule('30 8 * * *', async () => {
+cron.schedule('35 8 * * *', async () => {
     console.info("CronJob Triggered!");
     await cronService();
+}, {
+    scheduled: true,
+    timezone: "Asia/Kolkata"
 });
 
 app.listen(PORT, () =>
