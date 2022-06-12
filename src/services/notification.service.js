@@ -1,10 +1,12 @@
 const nodemailer = require('nodemailer');
+const Quote = require('inspirational-quotes');
 
 module.exports = {
     sendEmail: async (name) => {
         try {
+            const randomQuote = Quote.getRandomQuote()
             const subject = name === 'Test User' ? 'No Birthday for Today' : `Birthday Reminder: ${name}`;
-            const body = name === 'Test User' ? 'Keep Hustling, It\'s worth.' : `Hello Alok, <br /> I understand you are busy with your work but please arrange some time to send your wishes to <b>${name}</b>. <br /> <br /> -- Your well wisher ♥`;
+            const body = name === 'Test User' ? `${randomQuote}` : `Hello Alok, <br /> Send your wishes to <b>${name}</b>. <br /> <br /> -- Your well wisher ♥`;
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
